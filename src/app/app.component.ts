@@ -5,9 +5,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: ['.blue-bg{background-color:blue;}']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  private _selected: Array<boolean> = [false, false]; //default not selected elements
   private _accounts: Array<Account> = [
     {
       id: 1,
@@ -20,13 +21,22 @@ export class AppComponent {
   private _nextId = 3
   private createAcc(titleEl: any, descEl: any, balEl: any) {
     this._accounts.push(new Account(this._nextId, titleEl.value, descEl.value, balEl.value))
+    this._selected.push(false)
     this._nextId++
     titleEl.value = ""
     descEl.value = ""
     balEl.value = ""
   }
-  private removeAcc(index:number){
-    this._accounts.splice(index,1)
+  private removeAcc(index: number) {
+    this._accounts.splice(index, 1)
+    this._selected.splice(index,1)
+  }
+
+  
+
+  private select(index: number) {
+    this._selected[index] = !this._selected[index];
+
   }
 
 }
