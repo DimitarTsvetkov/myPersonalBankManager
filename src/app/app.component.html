@@ -7,44 +7,6 @@
 </div>
 
 
-    <ul>
-        <li *ngFor="let user of users,  let i = index" >
-             ({{i + 1}}) {{user.username}} - <em>{{user.email}}</em>
-        </li>
-    </ul>
 
-
-
-<!--  
-<div>
-    <input type="text" #a>
-    <p>The input is: {{a.value}}</p>
-</div>
-
-<div>
-    <input type="text" #b (keyup)="0">
-    <p>The input is {{b.value}}</p>
-
-
-</div>
-
-<div>
-    <input type="text" #newMail>
-    <button (click)="changeMail(newMail.value)">Change Mail</button>
-</div>
-
-<div>
-    <input type="text" #newMail2 (keyup)="keyPress($event)">
-</div>
-<div>
-    <input type="text" #newMail3 (keyup.enter)="changeMail(newMail3.value)">
-</div>
-
-<button (mouseleave)="toggle()">Toggle(mouseleave)</button>
-<input [disabled]='disabledInput' type="text" placeholder="Enter your text">
-    <input [disabled]='isDisabled()' type="text" [value]='currentUser.username' placeholder="Enter your text">
-
-<input [class.blue-bg]='isBlueBg' type="text" placeholder="Enter your text here">
-<input [style.background-color]='bgColor' type="text" placeholder="Enter your text here, pls">  -->
 
 
