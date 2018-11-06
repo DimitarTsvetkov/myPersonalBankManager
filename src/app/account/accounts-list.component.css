@@ -1,0 +1,20 @@
+.acc{
+    border-bottom: 1px solid #dddddd;
+    background-color: #aad7f1;
+    padding: 10px 24px;
+    margin: 8px;
+    color: black;
+    border-radius: 15px;
+}
+.acc:first-child{
+border-top: 1ps solid  #dddddd;
+
+}
+/* .acc>*{
+    margin: 4px;
+} */
+
+.acc:hover {
+background-color: aqua
+
+}

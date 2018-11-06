@@ -1,47 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-<h1>My personal finance</h1>
-<div>
-    <h2>Your accounts</h2>
-    <div class="row" *ngIf="_accounts.length == 0"  >
-    <div class="alert alert-info" ><strong>You don't have any bank accounts.</strong> Please add one!</div>
-</div>
+    <h1>My personal finance</h1>
+   
+        <h2>Your accounts</h2>
 
-<div class="row"> 
-<div class="acc col-md-12"  *ngFor="let acc of _accounts, let i = index"
-[ngClass]="{selected: _selected[i],
-    otherCSSClass: otherProperty
+        <accounts-list [accounts]="_accounts" (delete)="removeAcc($event)"></accounts-list>
+        <account-form (created)="createAcc($event)" [error]="createAccError"></account-form>
 
-}">
-    <h2>{{acc.title}} ({{acc.id}})</h2>
-    <p>{{acc.description}}</p>
-    <p>Ballance: <strong class="lead">{{acc.balance}}</strong></p>
-    <div class="row">
-        <div class="col-md-3">
-    <button class="btn btn-danger"  (click)="removeAcc(i)">Delete</button>
-    <button class="btn btn-primary" (click)="select(i)">{{_selected[i] ? 'Deselect' : 'Select' }}</button>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-<div>
-<div>
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" value="" #title>
-</div>
-<div>
-    <label for="desc">Description</label>
-    <input type="text" name="desc" id="desc" value="" #desc>
-</div>
-<div>
-    <label for="bal">Balance:</label>
-    <input type="number" name="bal" id="bal" value="0" #balance>
-</div>
-</div>
-
-<div>
-    <button (click)="createAcc(title,desc,balance)">Create new Bank account</button>
-</div>
-</div>
+     
+        </div>
